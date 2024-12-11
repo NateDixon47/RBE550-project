@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>project</name>
+  <version>0.0.0</version>
+  <description>The warehouse_simulation package</description>
+
+  <!-- Maintainer Information -->
+  <maintainer email="wh200720041@gmail.com">Wang Han</maintainer>
+
+  <!-- License -->
+  <license>BSD</license>
+
+  <!-- Build tool dependencies -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Build dependencies -->
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>nav_msgs</build_depend>
+  <build_depend>pluginlib</build_depend>
+  <build_depend>costmap_2d</build_depend>
+  <build_depend>nav_core</build_depend>
+
+  <!-- Build export dependencies -->
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>rospy</build_export_depend>
+  <build_export_depend>std_msgs</build_export_depend>
+  <build_export_depend>geometry_msgs</build_export_depend>
+  <build_export_depend>nav_msgs</build_export_depend>
+  <build_export_depend>pluginlib</build_export_depend>
+  <build_export_depend>costmap_2d</build_export_depend>
+  <build_export_depend>nav_core</build_export_depend>
+
+  <!-- Execution dependencies -->
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>pluginlib</exec_depend>
+  <exec_depend>costmap_2d</exec_depend>
+  <exec_depend>nav_core</exec_depend>
+
+  <!-- Additional dependencies -->
+  <depend>tf</depend>
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
+
+  <!-- Export information -->
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+    <pluginlib plugin="${prefix}/plugin_description.xml" />
+  </export>
+</package>

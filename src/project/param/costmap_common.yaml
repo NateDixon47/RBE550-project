@@ -1,0 +1,35 @@
+
+robot_radius: 0.25  # The radius of the robot in meters, used for collision checks.
+
+map_type: voxel  # The type of map used. 'voxel' maps allow 3D representation of obstacles.
+
+voxel_layer:  # Configuration for the voxel layer, which manages 3D obstacle data.
+  enabled:              true  # Enable the voxel layer.
+  max_obstacle_height:  4.2  # The maximum height of obstacles that the layer considers, in meters.
+  origin_z:             0.0  # The z-coordinate of the voxel grid origin, in meters.
+  z_resolution:         0.1  # The resolution of the voxel grid in the z-axis, in meters.
+  z_voxels:             22  # The number of voxels along the z-axis.
+  unknown_threshold:    15  # The threshold for marking a voxel as unknown (number of unknown cells).
+  mark_threshold:       0  # The threshold for marking a voxel as occupied.
+  combination_method:   1  # Method to combine obstacle data: 1 = overwrite, 0 = max value.
+  track_unknown_space:  true  # Whether to track unknown space in the costmap.
+  obstacle_range: 3.5  # Maximum range in meters for obstacles to be marked.
+  raytrace_range: 5  # Maximum range in meters for clearing obstacles using raytracing.
+  publish_voxel_map: true  # Publish the voxel grid as a topic for debugging or visualization.
+  observation_sources:  scan  # The list of sensors used for observations (e.g., Lidar).
+  scan:  # Configuration for the 'scan' observation source.
+    data_type: LaserScan  # Type of data provided by the sensor (LaserScan for 2D Lidar).
+    topic: scan  # ROS topic to subscribe to for LaserScan data.
+    marking: true  # Mark obstacles in the costmap based on scan data.
+    clearing: true  # Clear obstacles in the costmap based on scan data.
+    min_obstacle_height: 0.1  # Minimum height of obstacles to be considered, in meters.
+    max_obstacle_height: 3.3  # Maximum height of obstacles to be considered, in meters.
+
+inflation_layer:  # Configuration for the inflation layer, which creates a buffer around obstacles.
+  enabled:              true  # Enable the inflation layer.
+  cost_scaling_factor:  2.58  # How quickly the cost decreases with distance from obstacles.
+  inflation_radius:     0.75  # Radius around obstacles to inflate the cost, in meters.
+
+static_layer:  # Configuration for the static layer, which represents the static map.
+  enabled:              true  # Enable the static layer.
+

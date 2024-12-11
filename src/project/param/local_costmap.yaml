@@ -1,0 +1,15 @@
+local_costmap:
+   global_frame: /odom  # The global coordinate frame for the local costmap
+   robot_base_frame: /base_link  # The coordinate frame attached to the robot's base.
+   update_frequency: 2.0  # Frequency the costmap updates its data from sensors.
+   publish_frequency: 2.0  # Frequency the costmap publishes updates for visualization.
+   static_map: false  # Do not use a preloaded static map; rely on real-time sensor data.
+   rolling_window: true  # Enable rolling window; the costmap moves with the robot.
+   width: 4.0  # The width of the local costmap area.
+   height: 4.0  # The height of the local costmap area.
+   resolution: 0.05  # The resolution of the costmap grid.
+   transform_tolerance: 0.5  # Maximum allowed delay.
+   
+   plugins:  # List of plugins used to build the costmap layers.
+    - {name: voxel_layer,      type: "costmap_2d::VoxelLayer"}  # 3D voxel grid layer for obstacle detection.
+    - {name: inflation_layer,     type: "costmap_2d::InflationLayer"}  # Adds inflated costs around obstacles for safe navigation.

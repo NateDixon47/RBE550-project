@@ -1,0 +1,28 @@
+# General Settings
+shutdown_costmaps: false
+
+# Controller (Local Planner) Parameters
+controller_frequency: 5.0       # Frequency for local planner control loop 
+controller_patience: 3.0        # Time to wait for a valid control command 
+
+# Planner (Global Planner) Parameters
+planner_frequency: 0            # Frequency for global planner re-planning 
+planner_patience: 5.0           # Time to wait for a valid global plan 
+
+# Oscillation Parameters
+oscillation_timeout: 5.0        # Time before considering oscillation 
+oscillation_distance: 0.2       # Distance threshold for oscillation 
+
+# Custom Planner Integration
+base_local_planner: "base_local_planner/TrajectoryPlannerROS"  # Local planner
+base_global_planner: "global_planner/GlobalPlanner"            # Custom global planner
+
+# Other Optional Parameters
+clearing_rotation_allowed: true # Allow rotation in place for clearing obstacles
+recovery_behavior_enabled: true # Enable recovery behaviors
+
+TrajectoryPlannerROS:
+  global_plan_topic: /move_base/GlobalPlanner/plan
+
+
+

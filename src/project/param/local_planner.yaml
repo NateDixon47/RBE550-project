@@ -1,0 +1,43 @@
+TrajectoryPlannerROS:
+  # acceleration limits of the robot 
+  acc_lim_x: 3.0
+  acc_lim_y: 0.0
+  acc_lim_theta: 3.0
+
+  global_plan_topic: /move_base/GlobalPlanner/plan
+
+  # velocity limits of the robot 
+  max_vel_x: 3.0
+  min_vel_x: -0.2
+  max_vel_y: 0  
+  max_vel_theta: 3.0
+  min_vel_theta: -3.0
+  min_in_place_vel_theta: 0.1 
+
+  escape_vel: -0.1  # Velocity for escaping stuck situations
+
+  holonomic_robot: false  
+
+  # Set tolerances for achieving the goal position and orientation
+  xy_goal_tolerance: 0.1
+  yaw_goal_tolerance: 0.12
+
+  # Simulation parameters for trajectory generation
+  sim_time: 3.0  
+  sim_granularity: 0.025  
+  vx_samples: 10  
+  vtheta_samples: 20  
+
+  # Trajectory scoring parameters
+  pdist_scale: 0.6  
+  gdist_scale: 0.8  
+  occdist_scale: 0.01  
+  heading_lookahead: 0.325  
+  heading_scoring: false  
+
+  dwa: false 
+
+  oscillation_reset_dist: 0.05  # Distance to reset oscillation flags
+
+  prune_plan: true  # Remove waypoints from the global plan as they are passed
+  meter_scoring: false  

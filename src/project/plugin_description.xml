@@ -1,0 +1,7 @@
+<library path="${prefix}/scripts/global_planner.py">
+  <class name="global_planner/GlobalPlanner" type="global_planner.GlobalPlanner" base_class_type="nav_core::BaseGlobalPlanner">
+    <description>
+      A custom global planner implemented in Python.
+    </description>
+  </class>
+</library>

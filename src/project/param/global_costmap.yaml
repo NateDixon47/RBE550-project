@@ -1,0 +1,14 @@
+global_costmap:
+   global_frame: /map  # The global coordinate frame for the costmap 
+   robot_base_frame: /base_link  # The coordinate frame attached to the robot's base.
+   update_frequency: 1.0  # Frequency the costmap updates.
+   publish_frequency: 1.0  # Frequency the costmap publishes updates for visualization.
+   static_map: true  # Use a static map 
+   rolling_window: false  # Disable rolling window
+   transform_tolerance: 0.5  # Maximum delay
+   plugins:  # plugins used to build the costmap layers.
+     - {name: static_layer,            type: "costmap_2d::StaticLayer"}  # Static layer using a preloaded map.
+     - {name: voxel_layer,             type: "costmap_2d::VoxelLayer"}  # 3D voxel grid layer for obstacles.
+     - {name: inflation_layer,         type: "costmap_2d::InflationLayer"}  # Adds inflated costs around obstacles for safe navigation.
+
+
