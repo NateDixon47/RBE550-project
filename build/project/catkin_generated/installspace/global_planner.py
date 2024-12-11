@@ -25,7 +25,7 @@ class GlobalPlanner:
         self.map_data = self.get_map().map
 
         # Obstacle padding radius (in meters)
-        self.padding_radius = 0.1
+        self.padding_radius = 0.25
 
         self.start = None
         self.goal = None
