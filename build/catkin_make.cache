@@ -1,0 +1,2 @@
+project
+-DCATKIN_DEVEL_PREFIX=/home/nddixon/RBE_Grad/project_ws/devel -DCMAKE_INSTALL_PREFIX=/home/nddixon/RBE_Grad/project_ws/install -G Unix Makefiles
